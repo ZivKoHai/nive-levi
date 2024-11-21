@@ -11,6 +11,9 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        slideDown: "slideDown var(--duration) var(--bounce-in)",
+      },
     },
   },
   plugins: [],

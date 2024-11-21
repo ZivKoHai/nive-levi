@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import Button from "./component/Button";
 export default function Home() {
   return (
     <>
@@ -21,12 +21,9 @@ export default function Home() {
             Welcome to my personal website. I&apos;m a passionate professional
             dedicated to creating amazing things.
           </p>
-          <button className="mt-8 px-6 py-3 bg-black text-white dark:bg-white dark:text-black rounded-lg hover:opacity-90 transition">
-            Get in touch
-          </button>
         </div>
 
-        <div className="flex justify-center items-center w-full h-96 relative rounded-lg overflow-hidden mt-16">
+        <div className="flex justify-center items-center w-full h-96 relative rounded-lg overflow-hidden mt-16 ">
           <Image
             src="/niv.png"
             alt="Niv Levi"
@@ -40,8 +37,11 @@ export default function Home() {
         className="py-20 min-h-[70vh] flex flex-row justify-between items-center"
       >
         <div className="flex flex-col gap-6 text-left">
-          <h2 className="text-4xl font-bold">About Me</h2>
-          <div className="grid grid-cols-2 gap-6 text-left">
+          <div className="flex justify-between items-center">
+            <h2 className="text-4xl font-bold">About Me</h2>
+            <Button className="hidden sm:block">Get in touch</Button>
+          </div>
+          <div className="grid sm:grid-cols-2 grid-flow-row gap-6  text-left">
             <p className="text-lg max-w-2xl">
               Niv Levi was born on a crisp autumn morning in the small,
               picturesque town of Tiberias, Israel. As the firstborn of Daniel
@@ -50,7 +50,7 @@ export default function Home() {
               inseparable, their days filled with adventures along the shores of
               the Sea of Galilee.
             </p>
-            <p>
+            <p className="text-lg max-w-2xl">
               From a young age, Niv showed a keen interest in nature and
               science, often collecting rocks and insects to study under his
               little microscope. His father, Daniel, a local carpenter, nurtured
@@ -66,12 +66,12 @@ export default function Home() {
       </section>
       <section
         id="my-rival-brother"
-        className="py-20 min-h-[70vh] grid grid-cols-2 gap-6"
+        className="py-2 sm:py-20 min-h-[70vh] grid grid-cols-1 sm:grid-cols-2 gap-6 [&>*]:sm:col-start-auto [&>*]:col-start-1 [&>*:last-child]:row-start-1 [&>*:last-child]:sm:row-start-auto"
       >
         <div className="flex flex-col gap-6 text-left">
           <h2 className="text-4xl font-bold">My Rival Brother</h2>
           <div>
-            <p>
+            <p className="text-lg max-w-2xl">
               As Niv and Tomer approached their teenage years, the bond with
               their family deepened. However, like all siblings, they
               occasionally had their rivalries, especially when it came to
@@ -101,7 +101,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col gap-6 text-left">
           <h2 className="text-4xl font-bold">Military Life</h2>
-          <div className="grid grid-cols-2 gap-6 text-left">
+          <div className="grid sm:grid-cols-2 grid-flow-row gap-6 text-left">
             <p className="text-lg max-w-2xl">
               When Niv turned 18, he enlisted in the Israel Defense Forces, as
               is customary in Israel. He served in the Golani Brigade, where he
@@ -113,7 +113,7 @@ export default function Home() {
               skills and resilience, qualities that would later pave the way for
               his career.
             </p>
-            <p>
+            <p className="text-lg max-w-2xl">
               Throughout his service, Niv often thought of his family,
               especially during long nights on guard duty. He missed his twin
               brother, Tomer, who served in a different unit as a communications
@@ -123,7 +123,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="projects" className="py-20 min-h-[70vh]">
+      <section id="true-friendship" className="py-20 min-h-[70vh]">
         <div className="flex justify-center items-center w-full h-[500px] relative rounded-lg overflow-hidden mb-16">
           <Image
             src="/niv-tommy.jpg"
@@ -134,7 +134,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col gap-6 text-left">
           <h2 className="text-4xl font-bold">True Friendship</h2>
-          <div className="grid grid-cols-2 gap-6 text-left">
+          <div className="grid sm:grid-cols-2 grid-flow-row gap-6 text-left">
             <p className="text-lg max-w-2xl">
               Amidst all these transitions, Niv&apos;s loyal companion, a
               spirited German Shepherd named Rocky, was always by his side.
@@ -142,7 +142,7 @@ export default function Home() {
               over the years, the dog had become much more than a pet; he was a
               member of the family.
             </p>
-            <p>
+            <p className="text-lg max-w-2xl">
               Rocky&apos;s unwavering loyalty and joyful antics were a constant
               source of comfort and happiness, especially during challenging
               times.
@@ -152,12 +152,12 @@ export default function Home() {
       </section>
       <section
         id="my-success"
-        className="py-20 min-h-[100vh] grid grid-cols-2 gap-6"
+        className="py-20 min-h-[100vh] grid grid-cols-1 sm:grid-cols-2 gap-2"
       >
         <div className="flex flex-col justify-center gap-6 text-left">
           <h2 className="text-4xl font-bold">My Success</h2>
           <div>
-            <p>
+            <p className="text-lg max-w-2xl">
               Today, Niv continues to work towards his degree, with dreams of
               one day leading environmental conservation efforts in Israel. His
               twin brother, Tomer, has started a tech start-up, and they still
@@ -179,13 +179,14 @@ export default function Home() {
         </div>
       </section>
       <section id="the-end" className="py-20 min-h-[70vh]">
-        <div className="flex flex-col justify-center items-center gap-6 text-left">
-          <h2 className="text-5xl font-bold">The End</h2>
-          <p>
+        <div className="flex flex-col justify-center items-center gap-2 text-left">
+          <h2 className="text-8xl font-bold mb-4">The End</h2>
+          <p className="text-lg max-w-2xl text-center">
             Through all of life&apos;s ups and downs, Niv Levi remains a
             testament to the resilience and enduring spirit of family,
             friendship, and loyalty.
           </p>
+          <Button className="hidden sm:block">Get in touch</Button>
         </div>
       </section>
     </>

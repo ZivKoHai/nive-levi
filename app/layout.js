@@ -26,8 +26,9 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Nav />
-        <div className="pb-[100px]">{children}</div>
+        <div className="pb-[100px] z-30">{children}</div>
         <Footer />
+        <div className="h-[100vh] fixed inset-0 bg-black -z-10"></div>
       </body>
     </html>
   );
