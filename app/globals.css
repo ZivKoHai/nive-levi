@@ -4,8 +4,11 @@
 
 /* prettier-ignore */
 :root {
-  --background: #ffffff;
-  --foreground: black;
+  --color-1: #000000; /* Replace with your desired color */
+  --text-color: #000000; /* Replace with your desired text color */
+  --accent-color: #dadada;
+  --background: #000000;
+  --foreground: #ededed;
   --power1-in: linear( 0, 0.0039, 0.0156, 0.0352, 0.0625, 0.0977, 0.1407, 0.1914, 0.2499, 0.3164, 0.3906 62.5%, 0.5625, 0.7656, 1 );
     --power1-out: linear( 0, 0.2342, 0.4374, 0.6093 37.49%, 0.6835, 0.7499, 0.8086, 0.8593, 0.9023, 0.9375, 0.9648, 0.9844, 0.9961, 1 );
     --power1-in-out: linear( 0, 0.0027, 0.0106 7.29%, 0.0425, 0.0957, 0.1701 29.16%, 0.2477, 0.3401 41.23%, 0.5982 55.18%, 0.7044 61.56%, 0.7987, 0.875 75%, 0.9297, 0.9687, 0.9922, 1 );
@@ -43,7 +46,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: black;
+    --color-1: #e7e7e7; /* Replace with your desired color */
+    --text-color: #000000; /* Replace with your desired text color */
+    --accent-color: #dadada;
+    --background: #ffffff;
     --foreground: #ededed;
   }
 }
@@ -68,5 +74,73 @@ body {
   }
   to {
     transform: translateY(0);
+  }
+}
+/* Apply custom colors */
+.bg-color-1 {
+  background-color: var(--color-1);
+}
+.text-text-color {
+  color: var(--text-color);
+}
+.fill-current {
+  fill: currentColor;
+}
+
+#sidebar-active:checked ~ #overlay {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.links-container {
+  transition: right 0.75s var(--power4-out);
+}
+
+@media (max-width: 768px) {
+  .hover\:bg-accent-color:hover {
+    background-color: var(--accent-color);
+  }
+  .links-container {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    width: 300px;
+    height: 100%;
+    background-color: var(--color-1);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    transition: right 0.75s var(--power4-out);
+  }
+  nav a {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 30px;
+    justify-content: flex-start;
+    height: auto;
+  }
+  .open-sidebar-button,
+  .close-sidebar-button {
+    display: block;
+    cursor: pointer;
+  }
+
+  .md\\:hidden {
+    display: none;
+  }
+
+  #sidebar-active:checked ~ .links-container {
+    right: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .open-sidebar-button,
+  .close-sidebar-button {
+    display: none;
   }
 }
